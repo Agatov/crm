@@ -1,0 +1,6 @@
+%legend
+  Добавить клиента
+
+.row
+  .col-md-6
+    = render partial: 'clients/form', locals: {client: @client, url: clients_path}

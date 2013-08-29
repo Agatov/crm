@@ -1,0 +1,38 @@
+!!! 5
+%html
+  %head
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', :media => 'all'
+    = javascript_include_tag 'application'
+    %link{rel: :icon, type: 'image/vnd.microsoft.ico', href: '/assets/favicon.ico?11111'}
+    %link{rel: 'shortcut icon', type: 'image/x-icon', href: '/assets/favicon.ico?11111'}
+    %title
+      CRM
+  %body
+    %nav.navbar.navbar-default{role: :navigation}
+      .container
+        .navbar-header
+          %button.navbar-toggle{type: :button, 'data-toggle' => 'collapse'}
+            %span.sr-only
+              Toggle Navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{href: root_path}
+            CRM
+
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li.active
+              %a{href: clients_path}
+                Клиенты
+
+            %li
+              %a{href: clients_path}
+                Доставки
+          %form.navbar-form.navbar-right
+            %a.btn.btn-success{href: new_client_path}
+              Добавить клиента
+
+    .container
+      = yield

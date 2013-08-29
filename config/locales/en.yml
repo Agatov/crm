@@ -1,0 +1,27 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  hello: "Hello world"
+
+  time:
+    formats:
+      dayMonth: "%d %B %Y, %H:%M"
+
+
+  clients:
+    change_status_comment: "Статус изменен на %{status}"
+
+  activerecord:
+    enums:
+      client:              # the Model, as User.class.name.underscore
+        statuses:         # pluralized version of :gender
+          new: Новый
+          rejected: Отказ
+          thinking: Думает
+          recall: Перезвонить
+          expensive: Дорого
+          in_turn: В очереди
+          delivery: Доставка
+          delivery_reject: Отказ от доставки
+          success: Успех

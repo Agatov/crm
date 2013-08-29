@@ -1,0 +1,23 @@
+%legend
+  Клиенты
+
+
+.row
+  .col-md-8
+    %table.table.table-striped
+      - @clients.each do |client|
+        %tr
+          %td
+            = client.id.to_s
+          %td
+            = client.name
+
+          %td
+            = client.phone
+
+          %td
+            %span.label.label-info
+              = Client.statuses_for_select[client.status_cd][0]
+
+          %td
+            = link_to 'просмотреть', client_path(client)

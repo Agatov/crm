@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  address: MyString
+  date: 2013-08-27 21:27:09
+  number: MyString
+  cost: 1
+
+two:
+  user_id: 1
+  address: MyString
+  date: 2013-08-27 21:27:09
+  number: MyString
+  cost: 1
