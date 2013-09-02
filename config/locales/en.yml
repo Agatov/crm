@@ -20,8 +20,5 @@ en:
           rejected: Отказ
           thinking: Думает
           recall: Перезвонить
-          expensive: Дорого
-          in_turn: В очереди
-          delivery: Доставка
-          delivery_reject: Отказ от доставки
+          in_progress: В процессе
           success: Успех

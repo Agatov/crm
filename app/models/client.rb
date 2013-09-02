@@ -4,5 +4,5 @@ class Client < ActiveRecord::Base
   has_many :comments
   has_many :deliveries
 
-  as_enum :status, [:new, :rejected, :thinking, :recall, :expensive, :in_turn, :delivery, :delivery_reject, :success], prefix: :true
+  as_enum :status, [:new, :rejected, :thinking, :recall, :in_progress, :success], prefix: :true
 end
