@@ -20,5 +20,10 @@ en:
           rejected: Отказ
           thinking: Думает
           recall: Перезвонить
+          waiting_for_email: Жду email
+          send_email: Отправить email
+          mailed: Email отправлен
           in_progress: В процессе
+          prepayment_received: Получена предоплата
+          in_work: В работе
           success: Успех
