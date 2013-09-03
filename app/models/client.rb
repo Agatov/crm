@@ -16,5 +16,5 @@ class Client < ActiveRecord::Base
       :prepayment_received,
       :in_work,
       :success
-  ], prefix: :true
+  ], prefix: true
 end

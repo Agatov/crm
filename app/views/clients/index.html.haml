@@ -16,8 +16,28 @@
             = client.phone
 
           %td
-            %span.label.label-info
+            - if [Client.statuses(:rejected)].include? client.status_cd
+              - span_class = 'label-danger'
+
+            - elsif Client.statuses(:thinking, :in_progress).include? client.status_cd
+              - span_class = 'label-info'
+
+            - elsif Client.statuses(:waiting_for_email, :send_email).include? client.status_cd
+              - span_class = 'label-warning'
+
+            - elsif [Client.statuses(:mailed)].include? client.status_cd
+              - span_class = 'label-primary'
+
+            - elsif Client.statuses(:prepayment_received, :in_work, :success).include? client.status_cd
+              - span_class = 'label-success'
+
+            - else
+              - span_class = 'label-default'
+
+
+            %span.label{class: span_class}
               = Client.statuses_for_select[client.status_cd][0]
+
 
           %td
             = link_to 'просмотреть', client_path(client)
