@@ -7,4 +7,8 @@ Crm::Application.routes.draw do
     resources :comments, controller: 'comments', only: [:create, :destroy]
     resources :deliveries
   end
+
+  namespace :api do
+    resources :clients, only: :create
+  end
 end
