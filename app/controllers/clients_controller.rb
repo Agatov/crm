@@ -49,6 +49,21 @@ class ClientsController < ApplicationController
     redirect_to :back
   end
 
+
+  def send_sms
+    @client = Client.find params[:id]
+    @client.send_sms params[:client][:sms]
+    redirect_to :back
+  end
+
+  def send_weekend_sms
+    @client = Client.find params[:id]
+    @client.send_sms I18n.t 'sms.weekend_sms'
+    redirect_to :back
+  end
+
+
+
   def destroy
     @client = Client.find params[:id]
     @client.destroy

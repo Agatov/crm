@@ -3,6 +3,7 @@ class Client < ActiveRecord::Base
 
   has_many :comments
   has_many :deliveries
+  has_many :smss
 
   as_enum :status, [
       :new,
@@ -17,4 +18,9 @@ class Client < ActiveRecord::Base
       :in_work,
       :success
   ], prefix: true
+
+
+  def send_sms(text)
+    self.smss.create(text: text)
+  end
 end

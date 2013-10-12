@@ -23,6 +23,8 @@
           %li
             = link_to 'Редактировать', edit_client_path(@client)
           %li
+            = link_to 'Смс выходного дня', send_weekend_sms_client_path(@client), method: :post, confirm: 'Отправить смс выходного дня?'
+          %li
             = link_to 'Удалить', client_path(@client), method: :delete, confirm: 'Удалить клиента'
 
 
@@ -40,6 +42,7 @@
               Email
             %td
               = @client.email
+
 
 
   .col-md-6

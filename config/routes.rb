@@ -4,8 +4,10 @@ Crm::Application.routes.draw do
   resources :clients do
     put :status, on: :member
 
+    post :send_sms, on: :member
+    post :send_weekend_sms, on: :member
+
     resources :comments, controller: 'comments', only: [:create, :destroy]
-    resources :deliveries
   end
 
   namespace :api do

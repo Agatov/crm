@@ -4,6 +4,9 @@
 en:
   hello: "Hello world"
 
+  sms:
+    weekend_sms: "Дорогой клиент! Ты оставил нам заявку, но, к сожалению, мы не работаем по выходным. Мы позвоним тебе в понедельник. С уважением, команда abardacha.ru"
+
   time:
     formats:
       dayMonth: "%d %B %Y, %H:%M"
@@ -11,6 +14,7 @@ en:
 
   clients:
     change_status_comment: "Статус изменен на %{status}"
+    send_sms_comment: "Клиенту отправлена смс <%{sms_text}>"
 
   activerecord:
     enums:
