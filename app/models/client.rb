@@ -23,4 +23,8 @@ class Client < ActiveRecord::Base
   def send_sms(text)
     self.smss.create(text: text)
   end
+
+  def send_too_many_leads_sms
+    self.smss.create(text: I18n.t('sms.too_many_leads'))
+  end
 end
