@@ -6,15 +6,15 @@ class ClientsController < ApplicationController
       case params[:with_status]
 
         when 'new'
-          @clients = Client.new_clients
+          @clients = Client.new_clients.order('id desc')
         when 'active'
-          @clients = Client.active_clients
+          @clients = Client.active_clients.order('id desc')
         when 'recall'
-          @clients = Client.recall_clients
+          @clients = Client.recall_clients.order('id desc')
         when 'rejected'
-          @clients = Client.rejected_clients
+          @clients = Client.rejected_clients.order('id desc')
         when 'success'
-          @clients = Client.success_clients
+          @clients = Client.success_clients.order('id desc')
 
 
 
