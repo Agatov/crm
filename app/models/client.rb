@@ -20,6 +20,13 @@ class Client < ActiveRecord::Base
   ], prefix: true
 
 
+  scope :new_clients, where(status_cd: Client.statuses(:new))
+  scope :active_clients, where(status_cd: Client.statuses(:waiting_for_email, :send_email, :in_progress, :prepayment_received, :in_work))
+  scope :recall_clients, where(status_cd: Client.statuses(:recall))
+  scope :rejected_clients, where(status_cd: Client.statuses(:rejected))
+  scope :success_clients, where(status_cd: Client.statuses(:success))
+
+
   def send_sms(text)
     self.smss.create(text: text)
   end

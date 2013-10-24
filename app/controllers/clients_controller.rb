@@ -1,6 +1,33 @@
 class ClientsController < ApplicationController
   def index
-    @clients = Client.order('id desc')
+
+    if params[:with_status]
+
+      case params[:with_status]
+
+        when 'new'
+          @clients = Client.new_clients
+        when 'active'
+          @clients = Client.active_clients
+        when 'recall'
+          @clients = Client.recall_clients
+        when 'rejected'
+          @clients = Client.rejected_clients
+        when 'success'
+          @clients = Client.success_clients
+
+
+
+
+      end
+
+    else
+      @clients = Client.order('id desc')
+    end
+
+
+
+
   end
 
   def show

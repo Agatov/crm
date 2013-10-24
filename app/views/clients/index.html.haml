@@ -4,6 +4,21 @@
 
 .row
   .col-md-8
+    %ul.nav.nav-tabs.nav-justified
+      %li{class: params[:with_status] == nil ? 'active' : ''}
+        = link_to 'Все', clients_path
+      %li{class: params[:with_status] == 'active' ? 'active' : ''}
+        = link_to 'В работе', clients_path(with_status: :active)
+      %li{class: params[:with_status] == 'recall' ? 'active' : ''}
+        = link_to 'Перезвоны', clients_path(with_status: :recall)
+      %li{class: params[:with_status] == 'new' ? 'active' : ''}
+        = link_to 'Новые', clients_path(with_status: :new)
+      %li{class: params[:with_status] == 'rejected' ? 'active' : ''}
+        = link_to 'Откзазы', clients_path(with_status: :rejected)
+
+
+.row{style: 'margin-top: 25px'}
+  .col-md-8
     %table.table.table-striped
       - @clients.each do |client|
         %tr
@@ -11,7 +26,6 @@
             = client.id.to_s
           %td
             = client.name
-
           %td
             = client.phone
 
