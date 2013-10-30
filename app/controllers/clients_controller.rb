@@ -15,7 +15,8 @@ class ClientsController < ApplicationController
           @clients = Client.rejected_clients.order('id desc')
         when 'success'
           @clients = Client.success_clients.order('id desc')
-
+        when 'sale'
+          @clients = Client.where(sale_sms_sended: true).order('id desc')
 
 
 

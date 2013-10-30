@@ -1,5 +1,5 @@
 class Client < ActiveRecord::Base
-  attr_accessible :name, :number, :phone, :status_cd, :status, :email
+  attr_accessible :name, :number, :phone, :status_cd, :status, :email, :sale_sms_sended
 
   has_many :comments
   has_many :deliveries
@@ -33,5 +33,10 @@ class Client < ActiveRecord::Base
 
   def send_too_many_leads_sms
     self.smss.create(text: I18n.t('sms.too_many_leads'))
+  end
+
+  def send_sale_sms
+    self.smss.create(text: I18n.t('sms.sale'))
+    self.update_attributes(sale_sms_sended: true)
   end
 end

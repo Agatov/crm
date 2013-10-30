@@ -3,7 +3,7 @@
 
 
 .row
-  .col-md-8
+  .col-md-12
     %ul.nav.nav-tabs.nav-justified
       %li{class: params[:with_status] == nil ? 'active' : ''}
         = link_to 'Все', clients_path
@@ -15,6 +15,8 @@
         = link_to 'Новые', clients_path(with_status: :new)
       %li{class: params[:with_status] == 'rejected' ? 'active' : ''}
         = link_to 'Откзазы', clients_path(with_status: :rejected)
+      %li{class: params[:with_status] == 'sale' ? 'active' : ''}
+        = link_to 'Sale', clients_path(with_status: :sale)
 
 
 .row{style: 'margin-top: 25px'}
