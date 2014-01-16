@@ -56,4 +56,7 @@
 
 
           %td
+            = Russian::strftime(client.created_at, "%d %b %Y (%H:%M)")
+
+          %td
             = link_to 'просмотреть', client_path(client)
