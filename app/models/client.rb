@@ -4,6 +4,7 @@ class Client < ActiveRecord::Base
   has_many :comments
   has_many :deliveries
   has_many :smss
+  has_many :meetings
 
   as_enum :status, [
       :new,
