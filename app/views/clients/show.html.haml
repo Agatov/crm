@@ -63,7 +63,7 @@
               Кирилл
               %small
                 = l comment.created_at, format: :dayMonth
-            = comment.content
+            = comment.content.gsub("\n", '<br />').html_safe
 
 
 .modal.fade#comment-modal
