@@ -5,6 +5,7 @@ class Client < ActiveRecord::Base
   has_many :deliveries
   has_many :smss
   has_many :meetings
+  has_many :calls
 
   as_enum :status, [
       :new,
