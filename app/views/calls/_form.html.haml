@@ -1,0 +1,14 @@
+= simple_form_for call, url: url do |f|
+
+  .form-group
+    %label Причина звонка
+    %input.form-control{type: :text, name: 'calls[reasond]', value: call.reason, placeholder: 'Причина звонка'}
+  = f.input :date
+  .form-group
+    %label Комментарий
+    %textarea.form-control
+
+  = f.input :client_id, as: :hidden
+
+  %button.btn.btn-success{type: :submit}
+    Готово

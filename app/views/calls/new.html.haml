@@ -1,0 +1,9 @@
+%legend
+  Клиенты /
+  = link_to @client.name, client_path(@client)
+  = " / "
+  Назначить звонок
+
+.row
+  .col-md-6
+    = render partial: 'calls/form', locals: {call: @call, url: client_calls_path(@client)}

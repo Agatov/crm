@@ -1,0 +1,20 @@
+%legend
+  Встречи
+
+.row{style: 'margin-top: 25px'}
+  .col-md-12
+    %table.table.table-striped
+      - @meetings.each do |meeting|
+        %tr
+          %td
+            = Russian::strftime(meeting.date, "%d %b (%H:%M)")
+          %td
+            = "##{meeting.client_id}"
+          %td
+            = meeting.client.name
+          %td
+            = meeting.client.phone
+          %td
+            = meeting.address
+          %td
+            = link_to 'подробнее', client_meeting_path(meeting.client, meeting)

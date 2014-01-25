@@ -9,12 +9,12 @@ Crm::Application.routes.draw do
 
     resources :comments, controller: 'comments', only: [:create, :destroy]
     resources :meetings
-
-
+    resources :calls
 
   end
 
   resources :meetings
+  resources :calls
 
   namespace :api do
     resources :clients, only: :create
