@@ -1,0 +1,14 @@
+= simple_form_for meeting, url: url do |f|
+
+  .form-group
+    %label Место встречи
+    %input.form-control{type: :text, name: 'meeting[address]', value: meeting.address, placeholder: 'Место встречи'}
+  = f.input :date
+  .form-group
+    %label Заметки
+    %textarea.form-control
+
+  = f.input :client_id, as: :hidden
+
+  %button.btn.btn-success{type: :submit}
+    Готово

@@ -23,6 +23,8 @@
           %li
             = link_to 'Редактировать', edit_client_path(@client)
           %li
+            = link_to 'Назначить встречу', new_client_meeting_path(@client)
+          %li
             = link_to 'Смс выходного дня', send_weekend_sms_client_path(@client), method: :post, confirm: 'Отправить смс выходного дня?'
           %li
             = link_to 'Удалить', client_path(@client), method: :delete, confirm: 'Удалить клиента'
@@ -42,6 +44,21 @@
               Email
             %td
               = @client.email
+
+    - unless @client.meetings.empty?
+      .row
+        %legend
+          Встречи
+
+        %table.table.table-striped
+          - @client.meetings.each do |meeting|
+            %tr
+              %td
+                = Russian::strftime(meeting.date, "%d %b (%H:%M)")
+              %td
+                = meeting.address
+              %td
+                = link_to 'подробнее', client_meeting_path(@client, meeting)
 
 
 

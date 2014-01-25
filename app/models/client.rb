@@ -13,7 +13,7 @@ class Client < ActiveRecord::Base
       :recall,
       :waiting_for_email,
       :send_email,
-      :mailed,
+      :meeting,
       :in_progress,
       :prepayment_received,
       :in_work,

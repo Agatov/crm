@@ -8,6 +8,10 @@ Crm::Application.routes.draw do
     post :send_weekend_sms, on: :member
 
     resources :comments, controller: 'comments', only: [:create, :destroy]
+    resources :meetings
+
+
+
   end
 
   resources :meetings

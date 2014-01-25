@@ -1,0 +1,9 @@
+%legend
+  Клиенты /
+  = link_to @client.name, client_path(@client)
+  = " / "
+  Назначить встречу
+
+.row
+  .col-md-6
+    = render partial: 'meetings/form', locals: {meeting: @meeting, url: client_meetings_path(@client)}

@@ -23,9 +23,11 @@
 
         .collapse.navbar-collapse
           %ul.nav.navbar-nav
-            %li.active
+            %li{class: params[:controller] == 'clients' ? 'active' : ''}
               %a{href: clients_path}
                 Клиенты
+            %li{class: params[:controller] == 'meetings' ? 'active' : ''}
+              = link_to 'Встречи', meetings_path
           %form.navbar-form.navbar-right
             %a.btn.btn-success{href: new_client_path}
               Добавить клиента
