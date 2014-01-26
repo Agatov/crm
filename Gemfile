@@ -37,3 +37,6 @@ gem 'raindrops', '0.10.0'
 gem 'unicorn', '4.5.0'
 gem 'httparty'
 
+
+gem 'acts-as-taggable-on'
+gem 'bootstrap-datepicker-rails'

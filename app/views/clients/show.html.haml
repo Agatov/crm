@@ -25,6 +25,8 @@
           %li
             = link_to 'Назначить встречу', new_client_meeting_path(@client)
           %li
+            = link_to 'Назначить звонок', new_client_call_path(@client)
+          %li
             = link_to 'Смс выходного дня', send_weekend_sms_client_path(@client), method: :post, confirm: 'Отправить смс выходного дня?'
           %li
             = link_to 'Удалить', client_path(@client), method: :delete, confirm: 'Удалить клиента'
@@ -59,6 +61,22 @@
                 = meeting.address
               %td
                 = link_to 'подробнее', client_meeting_path(@client, meeting)
+
+    - unless @client.calls.empty?
+      .row
+        %legend
+          Звонки
+
+        %table.table.table-striped
+          - @client.calls.each do |call|
+            %tr
+              %td
+                = Russian::strftime(call.date, "%d %b (%H:%M)")
+              %td
+                = call.reason
+              %td
+                = link_to 'подробнее', client_call_path(@client, call)
+
 
 
 

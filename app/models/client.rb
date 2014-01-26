@@ -41,4 +41,8 @@ class Client < ActiveRecord::Base
     self.smss.create(text: I18n.t('sms.sale'))
     self.update_attributes(sale_sms_sended: true)
   end
+
+  def add_comment(content)
+    self.comments.create({content: content})
+  end
 end

@@ -18,6 +18,12 @@ class MeetingsController < ApplicationController
     @client = Client.find params[:client_id]
     @meeting = @client.meetings.build(params[:meeting])
 
+    if params[:date_string]
+
+
+
+    end
+
     if @meeting.save
       @client.update_attributes(status: :meeting)
       redirect_to client_meeting_path(@client, @meeting)

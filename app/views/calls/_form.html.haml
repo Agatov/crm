@@ -2,11 +2,18 @@
 
   .form-group
     %label Причина звонка
-    %input.form-control{type: :text, name: 'calls[reasond]', value: call.reason, placeholder: 'Причина звонка'}
-  = f.input :date
+    %input.form-control{type: :text, name: 'call[reason]', value: call.reason, placeholder: 'Причина звонка'}
+
+  .form-group
+    %label Дата
+    %input.form-control.call-date{type: :date_string, name: :date, 'data-behaviour' => 'datepicker', placeholder: 'Дата звонка'}
+
+  .form-group
+    = f.input :date, as: :time
+
   .form-group
     %label Комментарий
-    %textarea.form-control
+    %textarea.form-control{name: 'call[comment]'}
 
   = f.input :client_id, as: :hidden
 

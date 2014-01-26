@@ -1,20 +1,20 @@
 %legend
-  Встречи
+  Звонки
 
 .row{style: 'margin-top: 25px'}
   .col-md-12
     %table.table.table-striped
-      - @meetings.each do |meeting|
+      - @calls.each do |call|
         %tr
           %td
-            = Russian::strftime(meeting.date, "%d %b (%H:%M)")
+            = Russian::strftime(call.date, "%d %b (%H:%M)")
           %td
-            = "##{meeting.client_id}"
+            = "##{call.client_id}"
           %td
-            = meeting.client.name
+            = call.client.name
           %td
-            = meeting.client.phone
+            = call.client.phone
           %td
-            = meeting.address
+            = call.reason
           %td
-            = link_to 'подробнее', client_meeting_path(meeting.client, meeting)
+            = link_to 'подробнее', client_call_path(call.client, call)

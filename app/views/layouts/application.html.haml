@@ -26,6 +26,9 @@
             %li{class: params[:controller] == 'clients' ? 'active' : ''}
               %a{href: clients_path}
                 Клиенты
+
+            %li{class: params[:controller] == 'calls' ? 'active' : ''}
+              = link_to 'Звонки', calls_path
             %li{class: params[:controller] == 'meetings' ? 'active' : ''}
               = link_to 'Встречи', meetings_path
           %form.navbar-form.navbar-right
